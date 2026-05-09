@@ -1,9 +1,36 @@
+Haklısın, bazen kod parçalarıyla uğraşmak gerçekten kafa karıştırıcı olabiliyor. Hemen işi elime alıyorum.
+
+Aşağıda, tüm sitenin **görseller entegre edilmiş, güncellenmiş ve çalışmaya hazır son hali** var. Tek yapman gereken, bu kodu **tamamen kopyalayıp** bilgisayarındaki `index.html` dosyasının içine yapıştırmak, kaydetmek ve Vercel'e yüklemek.
+
+Görselleri doğru klasöre koyduğundan emin ol:
+```
+proje-klasoru/
+├── index.html (bu dosya)
+└── images/
+    └── urunler/
+        ├── sampuan-dus-jeli.webp
+        ├── vucut-losyonu.webp
+        ├── el-yuz-sabunu.webp
+        ├── dus-bonesi.webp
+        ├── terlik.webp
+        ├── dikis-seti.webp
+        ├── tiras-seti.webp
+        ├── dis-fircasi-macunu.webp
+        ├── ayakkabi-parlatici.webp
+        └── oda-kokulari.webp
+```
+
+İşte güncellenmiş **tam HTML kodu**:
+
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tekin Ticaret | Endüstriyel Temizlik & Ambalaj Çözümleri</title>
+  <title>Tekin Ticaret | Endüstriyel Temizlik ve Ambalaj Çözümleri</title>
+  <meta name="description" content="Tekin Ticaret; endüstriyel temizlik kimyasalları, kağıt grubu, aparatlar, sıvı temizlik ürünleri ve ambalaj çözümlerinde Türkiye'nin güvenilir toptan tedarikçisidir. Hemen teklif alın.">
+  <link rel="canonical" href="https://tekinticarettr.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -16,7 +43,6 @@
     a { text-decoration: none; }
     .wrap { max-width: 1240px; margin: 0 auto; padding: 0 5%; }
 
-    /* HEADER */
     #hdr { position: fixed; top: 0; left: 0; right: 0; z-index: 900; padding: 1.2rem 5%; display: flex; align-items: center; justify-content: space-between; transition: background .4s, padding .35s, box-shadow .4s; }
     #hdr.on { background: rgba(255,255,255,.97); backdrop-filter: blur(22px); padding: .85rem 5%; box-shadow: 0 1px 28px rgba(0,0,0,.07); }
     .logo { display: flex; align-items: center; gap: .75rem; }
@@ -44,7 +70,6 @@
     #mnav.open { transform: none; }
     #mnav a { padding: 1rem 0; border-bottom: 1px solid var(--border); font-size: 1.05rem; font-weight: 600; color: var(--charcoal); }
 
-    /* HEADER ACTIONS */
     .header-actions { display: flex; align-items: center; gap: 1rem; }
     .lang-dropdown { position: relative; }
     .lang-btn-main { background: transparent; border: none; font-size: 1.6rem; cursor: pointer; padding: .2rem .3rem; border-radius: 30px; display: flex; align-items: center; color: #fff; transition: background .2s; }
@@ -60,7 +85,6 @@
     .cart-icon svg { width: 24px; height: 24px; }
     .cart-badge { position: absolute; top: -4px; right: -6px; background: var(--green); color: #fff; font-size: .65rem; font-weight: 700; min-width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 0 4px; border: 2px solid #fff; }
 
-    /* HERO */
     .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
     .hero-bg { position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.42)), url('images/Fireflyimage.jpg') center / cover no-repeat; }
     .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,148,136,.16) 0%, transparent 60%); }
@@ -96,7 +120,6 @@
     .r { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
     .r.vis { opacity: 1; transform: none; }
 
-    /* KATALOG */
     .cat-hd { text-align: center; margin-bottom: 4rem; }
     .cat-grid { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
     .cat-card { background: #fff; border-radius: 22px; border: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; cursor: pointer; transition: box-shadow .35s, transform .35s; }
@@ -116,13 +139,11 @@
     .btn-all { background: var(--charcoal); color: #fff; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: .5rem; box-shadow: 0 8px 20px rgba(0,0,0,.1); border: none; cursor: pointer; }
     .btn-all:hover { background: #0f172a; transform: translateY(-2px); }
 
-    /* NEDEN BİZ (3 KART) */
     .why-wrap { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5.5rem; align-items: center; }
     .feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
     .f-box { padding: 1.6rem 1.4rem; background: var(--off-white); border-radius: 16px; }
     .f-ico { width: 44px; height: 44px; background: linear-gradient(135deg, var(--green), #059669); border-radius: 11px; display: flex; align-items: center; justify-content: center; margin-bottom: .85rem; }
 
-    /* HAKKIMIZDA */
     .about-wrap { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5.5rem; align-items: center; }
     .about-img { border-radius: 24px; overflow: hidden; aspect-ratio: 4/3; position: relative; }
     .about-img img { width: 100%; height: 100%; object-fit: cover; }
@@ -132,7 +153,6 @@
     .about-list li { display: flex; align-items: center; gap: .7rem; font-size: .87rem; font-weight: 500; padding: .38rem 0; }
     .about-list li::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; }
 
-    /* FOOTER - ORİJİNAL TASARIM */
     footer { background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%); color: #fff; padding: 4.5rem 5% 2rem; }
     .ft-grid { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
     .ft-brand h3 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; margin-bottom: .65rem; }
@@ -151,14 +171,14 @@
     .ft-bottom { max-width: 1240px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.17); padding-top: 1.35rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
     .ft-bottom p { font-size: .79rem; color: rgba(255,255,255,.52); }
 
-    /* MODAL */
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(6px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity .3s; }
     .modal-overlay.active { opacity: 1; visibility: visible; }
     .modal { background: #fff; border-radius: 28px; max-width: 1000px; width: 90%; max-height: 85vh; overflow-y: auto; padding: 2rem 2.2rem; position: relative; }
     .modal-close { position: absolute; top: 1.5rem; right: 1.8rem; background: var(--off-white); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; }
     .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem; }
     .product-item { background: var(--off-white); border-radius: 16px; padding: 1.2rem 1rem; text-align: center; position: relative; }
-    .product-img { width: 100%; aspect-ratio: 1/1; background: #cbd5e1; border-radius: 14px; margin-bottom: .9rem; display: flex; align-items: center; justify-content: center; font-size: 2.4rem; }
+    .product-img { width: 100%; aspect-ratio: 1/1; background: #cbd5e1; border-radius: 14px; margin-bottom: .9rem; display: flex; align-items: center; justify-content: center; font-size: 2.4rem; overflow: hidden; }
+    .product-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
     .product-item h4 { font-family: 'Montserrat', sans-serif; font-size: .95rem; font-weight: 700; margin-bottom: .8rem; }
     .btn-wa { background: linear-gradient(135deg, var(--green), #059669); color: #fff; padding: .5rem 1rem; border-radius: 40px; font-size: .8rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: .3rem; width: 100%; }
     .add-to-cart-btn { position: absolute; top: 8px; right: 8px; background: var(--green); color: #fff; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 1.5rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 10px rgba(13,148,136,.3); z-index: 5; }
@@ -272,7 +292,6 @@
   <div class="ft-bottom wrap"><p>&copy; 2024 Tekin Ticaret. Tüm hakları saklıdır.</p><p>Endüstriyel Temizlik & Ambalaj Çözümleri</p></div>
 </footer>
 
-<!-- MODALLAR -->
 <div class="modal-overlay" id="productModal"><div class="modal"><button class="modal-close">&times;</button><h3 id="modalTitle"></h3><div class="modal-sub" id="modalSub"></div><div class="product-grid" id="modalProductGrid"></div></div></div>
 <div class="modal-overlay" id="cartModal"><div class="modal cart-modal"><button class="modal-close" id="closeCartModal">&times;</button><h3 data-i18n="cart.title">Teklif Sepeti</h3><ul class="cart-items" id="cartItemsList"></ul><div class="cart-footer"><span class="cart-total" id="cartTotalCount">0 ürün</span><button class="btn-clear" id="clearCartBtn" data-i18n="cart.clear">Temizle</button></div><button class="btn-send" id="sendCartBtn" data-i18n="cart.send">WhatsApp ile Teklif Gönder</button></div></div>
 <a class="fwa" href="https://wa.me/905327613406?text=Merhaba%2C%20teklif%20almak%20istiyorum." target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" width="27" height="27"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
@@ -414,10 +433,28 @@
     const cartModal = document.getElementById('cartModal');
     const openCart = () => { renderCartModal(); cartModal.classList.add('active'); document.body.style.overflow = 'hidden'; };
     document.getElementById('cartIconBtn').addEventListener('click', openCart);
-    document.getElementById('mCartIconBtn').addEventListener('click', openCart);
+    document.getElementById('mCartIconBtn').addEventListener('click', () => { mnav.classList.remove('open'); openCart(); });
     document.getElementById('closeCartModal').addEventListener('click', () => { cartModal.classList.remove('active'); document.body.style.overflow = ''; });
     document.getElementById('clearCartBtn').addEventListener('click', clearCart);
     document.getElementById('sendCartBtn').addEventListener('click', () => { if (!cart.length) return; window.open(`https://wa.me/${WA}?text=${encodeURIComponent(generateCartMessage())}`, '_blank'); });
+
+    // ÜRÜN GÖRSELİ YARDIMCI FONKSİYONU
+    function getProductImage(productName) {
+      const imageMap = {
+        'Şampuan ve Duş Jeli': 'sampuan-dus-jeli',
+        'Vücut Losyonu': 'vucut-losyonu',
+        'El ve Yüz Sabunu': 'el-yuz-sabunu',
+        'Duş Bonesi': 'dus-bonesi',
+        'Tek Kullanımlık Terlik': 'terlik',
+        'Dikiş Seti': 'dikis-seti',
+        'Tıraş Seti': 'tiras-seti',
+        'Diş Fırçası ve Macunu': 'dis-fircasi-macunu',
+        'Ayakkabı Parlatıcı': 'ayakkabi-parlatici',
+        'Oda Kokuları': 'oda-kokulari'
+      };
+      const imageName = imageMap[productName];
+      return imageName ? `images/${imageName}.webp` : null;
+    }
 
     // ÜRÜN MODAL
     const prodModal = document.getElementById('productModal');
@@ -437,7 +474,11 @@
       modalSub.textContent = items.length + ' ' + (currentLang==='tr'?'çeşit ürün':'products');
       let html = '';
       items.forEach(p => {
-        html += `<div class="product-item"><div class="product-img">📦</div><h4>${p}</h4><button class="add-to-cart-btn" data-product="${p}" title="Sepete Ekle">+</button><a href="https://wa.me/${WA}?text=${encodeURIComponent(`Merhaba, ${p} için teklif almak istiyorum.`)}" target="_blank" class="btn-wa"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="margin-right:5px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>Teklif Al</a></div>`;
+        const imageSrc = getProductImage(p);
+        const imageHtml = imageSrc 
+          ? `<img src="${imageSrc}" alt="${p}" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" />`
+          : '📦';
+        html += `<div class="product-item"><div class="product-img">${imageHtml}</div><h4>${p}</h4><button class="add-to-cart-btn" data-product="${p}" title="Sepete Ekle">+</button><a href="https://wa.me/${WA}?text=${encodeURIComponent(`Merhaba, ${p} için teklif almak istiyorum.`)}" target="_blank" class="btn-wa"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="margin-right:5px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>Teklif Al</a></div>`;
       });
       modalGrid.innerHTML = html;
       prodModal.classList.add('active'); document.body.style.overflow = 'hidden';
@@ -461,3 +502,6 @@
 </script>
 </body>
 </html>
+```
+
+Bu kodu olduğu gibi kopyala, `index.html` dosyana yapıştır, kaydet ve Vercel'e yükle. Hepsi bu kadar! 😊
